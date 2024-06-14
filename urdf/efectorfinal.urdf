@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="1.1606E-19 0.00050794 0.050435"
+        xyz="3.4843E-19 0.0024516 0.051521"
         rpy="0 0 0" />
       <mass
-        value="0.16236" />
+        value="0.16854" />
       <inertia
-        ixx="0.00015979"
-        ixy="9.8237E-22"
-        ixz="1.2597E-21"
-        iyy="0.00015679"
+        ixx="0.0001602"
+        ixy="1.3986E-21"
+        ixz="1.375E-21"
+        iyy="0.00015752"
         iyz="-2.4381E-06"
-        izz="4.5703E-05" />
+        izz="4.6113E-05" />
     </inertial>
     <visual>
       <origin
@@ -45,20 +45,20 @@
     </collision>
   </link>
   <link
-    name="first_Link">
+    name="first_link">
     <inertial>
       <origin
-        xyz="0.0054468 -4.0963E-18 -4.1716E-18"
+        xyz="0.026879 0.0068778 0.0033069"
         rpy="0 0 0" />
       <mass
-        value="0.0061881" />
+        value="0.010354" />
       <inertia
-        ixx="7.3151E-07"
-        ixy="-7.1568E-23"
-        ixz="-8.9034E-23"
-        iyy="4.1066E-07"
-        iyz="-7.2792E-23"
-        izz="4.1066E-07" />
+        ixx="1.6581E-06"
+        ixy="4.7347E-08"
+        ixz="2.3376E-07"
+        iyy="2.8867E-06"
+        iyz="-4.2874E-07"
+        izz="2.8973E-06" />
     </inertial>
     <visual>
       <origin
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://efectorfinal/meshes/first_Link.STL" />
+          filename="package://efectorfinal/meshes/first_link.STL" />
       </geometry>
       <material
         name="">
@@ -80,25 +80,25 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://efectorfinal/meshes/first_Link.STL" />
+          filename="package://efectorfinal/meshes/first_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="first_joint"
-    type="revolute">
+    type="prismatic">
     <origin
-      xyz="0 0.048 0.08"
-      rpy="-1.3749 0 1.5708" />
+      xyz="-0.03 0.058 0.099"
+      rpy="-1.5708 0 0" />
     <parent
       link="base_link" />
     <child
-      link="first_Link" />
+      link="first_link" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 0 0" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-0.02"
+      upper="0.02"
       effort="0"
       velocity="0" />
   </joint>
@@ -106,7 +106,7 @@
     name="second_link">
     <inertial>
       <origin
-        xyz="0.026521 0.0068778 0.0033069"
+        xyz="0.026879 0.0068778 0.0033069"
         rpy="0 0 0" />
       <mass
         value="0.010354" />
@@ -146,75 +146,17 @@
     name="second_joint"
     type="prismatic">
     <origin
-      xyz="0.01 -0.012796 0.033125"
-      rpy="-1.5708 1.3749 -1.5708" />
+      xyz="0.03 0.058 0.061"
+      rpy="1.5708 0 -3.1416" />
     <parent
-      link="first_Link" />
+      link="base_link" />
     <child
       link="second_link" />
     <axis
       xyz="0 0 0" />
     <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
-  </joint>
-  <link
-    name="third_link">
-    <inertial>
-      <origin
-        xyz="0.026521 0.0068778 0.0033069"
-        rpy="0 0 0" />
-      <mass
-        value="0.010354" />
-      <inertia
-        ixx="1.6581E-06"
-        ixy="4.7347E-08"
-        ixz="2.3376E-07"
-        iyy="2.8867E-06"
-        iyz="-4.2874E-07"
-        izz="2.8973E-06" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://efectorfinal/meshes/third_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.64314 0.61569 0.6 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://efectorfinal/meshes/third_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="third_joint"
-    type="prismatic">
-    <origin
-      xyz="0.01 0.012796 -0.033125"
-      rpy="1.5708 -1.3749 1.5708" />
-    <parent
-      link="first_Link" />
-    <child
-      link="third_link" />
-    <axis
-      xyz="0 0 0" />
-    <limit
-      lower="0"
-      upper="0"
+      lower="-0.02"
+      upper="0.02"
       effort="0"
       velocity="0" />
   </joint>
